@@ -1,4 +1,4 @@
-# Busca de Usuários através API do GitHub
+# Busca de Usuários através da API do GitHub
 
 A aplicação possui a tela de Login e de Busca, criada com React e que consome a API do GitHub, trazendo as informações sobre o Usuário, Seguidores, Repositórios, entre outros.
 
@@ -39,9 +39,13 @@ yarn start
 
 A aplicação estará rodando em http://localhost:3000.
 
+Outra forma é acessando o link: https://isabellamacedo.github.io/
+
 #### Observações sobre a API do GitHub:
 
-Esta aplicação utiliza a API do GitHub, ela possui um limite de 60 requisições por hora. Para controlar se você poderá fazer mais requisições e quantas faltam, foi adicionada esta informação em tela.
+Esta aplicação utiliza a API do GitHub. Ela possui um limite de 60 requisições por hora. Para controlar se você poderá fazer mais requisições e quantas faltam, foi adicionada esta informação em tela.
+
+
 
 Esta limitação é por IP e não por usuário do GitHub. Então, caso atinja o limite, será necessário aguardar 1 hora para poder consultar novamente.
 
