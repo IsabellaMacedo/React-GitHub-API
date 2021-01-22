@@ -39,7 +39,7 @@ yarn start
 
 A aplicação estará rodando em http://localhost:3000.
 
-Outra forma é acessando o link: https://isabellamacedo.github.io/
+Outra forma é acessando o link: https://isabellamacedo.github.io/desafio/
 
 #### Observações sobre a API do GitHub:
 
