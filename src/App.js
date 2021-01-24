@@ -1,25 +1,19 @@
 import React from "react";
-import { Homepage, Login, Error } from "./pages";
+import { Homepage, Login, Repositories } from "./pages";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact={true}>
-          <Login></Login>
-        </Route>
-        <Route path="/login" exact={true}>
-          <Login></Login>
-        </Route>
-        <Route path="/desafio_git" exact={true}>
-          <Login></Login>
-        </Route>
         <Route path="/home" exact={true}>
           <Homepage></Homepage>
         </Route>
-        <Route path="*">
-          <Error></Error>
+        <Route path="/repositories" exact={true}>
+          <Repositories></Repositories>
+        </Route>
+        <Route path="/">
+          <Login></Login>
         </Route>
       </Switch>
     </Router>

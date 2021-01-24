@@ -10,7 +10,7 @@ const Navbar = () => {
         </h4>
       </section>
 
-      <a href="/">LogOut</a>
+      <a href="/login">LogOut</a>
     </Wrapper>
   );
 };

@@ -1,7 +1,6 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, useEffect } from "react";
 import mockUser from "./mockData.js/mockUser";
 import mockRepos from "./mockData.js/mockRepos";
-import mockModal from "./mockData.js/mockModal";
 import mockFollowers from "./mockData.js/mockFollowers";
 import axios from "axios";
 
@@ -13,9 +12,7 @@ const GithubContext = React.createContext();
 const GithubProvider = ({ children }) => {
   const [githubUser, setGithubUser] = useState(mockUser);
   const [repos, setRepos] = useState(mockRepos);
-  const [details, setDetails] = useState(mockModal);
   const [followers, setFollowers] = useState(mockFollowers);
-
   const [requests, setRequests] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState({ show: false, msg: "" });
@@ -32,7 +29,7 @@ const GithubProvider = ({ children }) => {
     if (response) {
       // Usuário
       setGithubUser(response.data);
-      const { login, followers_url, repos_url } = response.data;
+      const { followers_url, repos_url } = response.data;
 
       // Repositórios
       axios(`${repos_url}`).then((response) => setRepos(response.data));
@@ -78,7 +75,6 @@ const GithubProvider = ({ children }) => {
       value={{
         githubUser,
         repos,
-        details,
         followers,
         requests,
         error,

@@ -1,5 +1,6 @@
 import React from "react";
-import { Info, Repos, User, Search, Navbar } from "../components";
+import { Link } from "react-router-dom";
+import { Info, User, Search, Navbar } from "../components";
 import { GithubContext } from "../context/context";
 
 const Homepage = () => {
@@ -19,7 +20,7 @@ const Homepage = () => {
       <Search />
       <Info />
       <User />
-      <Repos />
+      <Link to="/repositories"> Repositórios </Link>
     </main>
   );
 };

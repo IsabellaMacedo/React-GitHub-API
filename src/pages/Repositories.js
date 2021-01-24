@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Repos, Navbar } from "../components";
 import { GithubContext } from "../context/context";
 
@@ -15,6 +16,9 @@ const Repositories = () => {
   return (
     <main>
       <Navbar></Navbar>
+      <div>
+        <Link to="/home"> Voltar </Link>
+      </div>
       <Repos />
     </main>
   );

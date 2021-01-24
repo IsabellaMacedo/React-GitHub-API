@@ -1,23 +1,27 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { GithubContext } from "../context/context";
 import styled from "styled-components";
 
 const Repos = () => {
-  const { repos } = React.useContext(GithubContext);
+  const modalRef = React.useRef();
 
+  const openModal = () => {
+    modalRef.current.openModal();
+  };
+  const { repos } = React.useContext(GithubContext);
   return (
     <Wrapper className="section-center">
       <div className="repos">
         {repos.map((repos, index) => {
           const { name, description, forks, language, html_url } = repos;
+
           return (
             <article key={index}>
               <div>
                 <a href={html_url} target="_blank">
                   <h4>Nome: {name}</h4>
-                  <h5>Descrição: {description || "Não Informada."}</h5>
-                  <h5>Forks: {forks}</h5>
-                  <h5>Linguagem: {language || "Não Informada."}</h5>
+                  <h4>Descrição: {description}</h4>
+                  <h4>Forks: {forks}</h4>
                 </a>
               </div>
             </article>
@@ -49,6 +53,7 @@ const Wrapper = styled.article`
     letter-spacing: var(--spacing);
     font-size: 1rem;
   }
+
   .repos {
     overflow: auto;
     height: 600px;
@@ -66,12 +71,6 @@ const Wrapper = styled.article`
     grid-template-columns: auto 1fr;
     align-items: center;
     column-gap: 1rem;
-    img {
-      height: 100%;
-      width: 45px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
     h4 {
       margin-bottom: 0.2;
       color: var(--clr-primary-5);
@@ -82,6 +81,38 @@ const Wrapper = styled.article`
     a {
       color: var(--black);
     }
+  }
+
+  .modal-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-box {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 30%;
+    width: 60%;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    z-index: 101;
+    padding: 40px;
   }
 `;
 

@@ -13,33 +13,42 @@ const Card = () => {
     bio,
     location,
   } = githubUser;
-  return (
-    <Wrapper>
-      <header>
-        <img src={avatar_url} alt={name} />
-        <div>
-          <h3>{name}</h3>
+
+  if (name) {
+    return (
+      <Wrapper>
+        <header>
+          <img src={avatar_url} alt={name} />
+          <div>
+            <h3>{name}</h3>
+          </div>
+          <a href={html_url} target="_blank" rel="noopener noreferrer">
+            Ir para GitHub
+          </a>
+        </header>
+        <p className="bio">{bio}</p>
+        <div className="links">
+          <p>
+            <MdBusiness></MdBusiness> {company || "Empresa não informada"}
+          </p>
+          <p>
+            <MdLocationOn></MdLocationOn>{" "}
+            {location || "Localização não informada"}
+          </p>
+          <a href={`https://${blog}`} target="_blank" rel="noopener noreferrer">
+            <MdLink></MdLink>
+            {blog || "Blog não informado"}
+          </a>
         </div>
-        <a href={html_url} target="_blank">
-          Ir para GitHub
-        </a>
-      </header>
-      <p className="bio">{bio}</p>
-      <div className="links">
-        <p>
-          <MdBusiness></MdBusiness> {company || "Empresa não informada"}
-        </p>
-        <p>
-          <MdLocationOn></MdLocationOn>{" "}
-          {location || "Localização não informada"}
-        </p>
-        <a href={`https://${blog}`} target="_blank">
-          <MdLink></MdLink>
-          {blog || "Blog não informado"}
-        </a>
-      </div>
-    </Wrapper>
-  );
+      </Wrapper>
+    );
+  } else {
+    return (
+      <Wrapper>
+        <header></header>
+      </Wrapper>
+    );
+  }
 };
 const Wrapper = styled.article`
   background: var(--clr-white);

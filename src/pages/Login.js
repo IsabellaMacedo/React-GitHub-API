@@ -1,6 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { GithubContext } from "../context/context";
 import styled from "styled-components";
 import loginimg from "../images/login-img.svg";
 
@@ -18,7 +17,6 @@ function login({ user, password }) {
 const Login = () => {
   const [values, setValues] = useState(initialState);
   const [error, setError] = useState(null);
-  const { setToken } = useContext(GithubContext);
   const history = useHistory();
 
   function onChange(event) {
