@@ -55,8 +55,3 @@ Para visualizar informações de:
 
 - Usuário: https://api.github.com/users/(nome_do_usuario)
 - Lista de Repositórios: https://api.github.com/users/(nome_do_usuario)/repos
-
-
-Observação: os dados de acesso são:
-- admin
-- password
