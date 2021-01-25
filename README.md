@@ -3,7 +3,7 @@
 A aplicação possui as interfaces de Login, Busca e de Repositórios, sendo as três responsivas.
 Foi criada com React e consome a API do GitHub, trazendo as informações sobre o Usuário, Seguidores, Repositórios, entre outros.
 
-### :books: Linguagens e libs utilizadas:
+### :books: Linguagens, programas e libs utilizadas:
 
 - React.JS,
 - React Icons,
