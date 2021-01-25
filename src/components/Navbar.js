@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -9,8 +10,10 @@ const Navbar = () => {
           Seja bem vindo(a), <strong>Admin</strong>!
         </h4>
       </section>
-
-      <a href="/login">LogOut</a>
+      <section>
+        <Link to="/home"> Voltar </Link>
+        <Link to="/login"> LogOut </Link>
+      </section>
     </Wrapper>
   );
 };
@@ -29,12 +32,7 @@ const Wrapper = styled.nav`
     margin-bottom: 0;
     font-weight: 400;
   }
-  img {
-    width: 35px !important;
-    height: 35px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
+
   button {
     background: transparent;
     justify-content: right;
@@ -48,6 +46,8 @@ const Wrapper = styled.nav`
   a {
     justify-content: right;
     align-items: right;
+    color: blue;
+    margin-right: 2rem;
   }
 `;
 

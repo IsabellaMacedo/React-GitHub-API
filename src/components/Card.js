@@ -1,18 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { GithubContext } from "../context/context";
 import styled from "styled-components";
 import { MdBusiness, MdLocationOn, MdLink } from "react-icons/md";
 const Card = () => {
   const { githubUser } = React.useContext(GithubContext);
-  const {
-    avatar_url,
-    html_url,
-    name,
-    company,
-    blog,
-    bio,
-    location,
-  } = githubUser;
+  const { avatar_url, name, company, blog, bio, location } = githubUser;
 
   if (name) {
     return (
@@ -22,9 +15,8 @@ const Card = () => {
           <div>
             <h3>{name}</h3>
           </div>
-          <a href={html_url} target="_blank" rel="noopener noreferrer">
-            Ir para GitHub
-          </a>
+
+          <Link to="/repositories"> Ver Repositórios </Link>
         </header>
         <p className="bio">{bio}</p>
         <div className="links">

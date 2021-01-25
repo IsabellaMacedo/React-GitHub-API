@@ -1,14 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import { GithubContext } from "../context/context";
 import styled from "styled-components";
 
 const Repos = () => {
-  const modalRef = React.useRef();
-
-  const openModal = () => {
-    modalRef.current.openModal();
-  };
   const { repos } = React.useContext(GithubContext);
+
   return (
     <Wrapper className="section-center">
       <div className="repos">
@@ -16,15 +12,28 @@ const Repos = () => {
           const { name, description, forks, language, html_url } = repos;
 
           return (
-            <article key={index}>
-              <div>
-                <a href={html_url} target="_blank">
-                  <h4>Nome: {name}</h4>
-                  <h4>Descrição: {description}</h4>
-                  <h4>Forks: {forks}</h4>
-                </a>
-              </div>
-            </article>
+            <main>
+              <article key={index}>
+                <div>
+                  <h4>{name}</h4>
+                  <div>
+                    <h5> Descrição: {description}</h5>
+                    <h5> Quantidade de Forks: {forks}</h5>
+                    <h5> Linguagem utilizada: {language}</h5>
+                    <h5>
+                      Link para o repositório:{" "}
+                      <a
+                        href={html_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {html_url}
+                      </a>
+                    </h5>
+                  </div>
+                </div>
+              </article>
+            </main>
           );
         })}
       </div>
@@ -41,6 +50,7 @@ const Wrapper = styled.article`
   &::before {
     content: "Lista de Repositórios";
     position: absolute;
+    overflow: auto;
     top: 0;
     left: 0;
     transform: translateY(-100%);
@@ -58,11 +68,17 @@ const Wrapper = styled.article`
     overflow: auto;
     height: 600px;
     display: grid;
-    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
-    margin-top: 3rem;
-    gap: 1.25rem 1rem;
-    padding: 1rem 2rem;
+    grid-template-rows: repeat(minmax(100px, 1fr));
+    margin-top: 1rem;
+    gap: 1rem 1rem;
+    padding: 2rem 2rem;
   }
+
+  .button {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
   article {
     transition: var(--transition);
     padding: 0.15rem 0.5rem;
@@ -79,40 +95,12 @@ const Wrapper = styled.article`
       margin-bottom: 0.2;
     }
     a {
-      color: var(--black);
+      color: gray;
     }
-  }
-
-  .modal-wrapper {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .modal-backdrop {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-
-  .modal-box {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-height: 30%;
-    width: 60%;
-    overflow-y: auto;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    z-index: 101;
-    padding: 40px;
+    div {
+      grid-template-columns: auto 1fr;
+      column-gap: 1rem;
+    }
   }
 `;
 

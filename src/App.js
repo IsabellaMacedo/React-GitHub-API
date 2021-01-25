@@ -12,6 +12,9 @@ function App() {
         <Route path="/repositories" exact={true}>
           <Repositories></Repositories>
         </Route>
+        <Route path="/login" exact={true}>
+          <Login></Login>
+        </Route>
         <Route path="/">
           <Login></Login>
         </Route>
