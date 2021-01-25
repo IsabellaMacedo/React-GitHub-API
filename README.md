@@ -1,12 +1,14 @@
 # Busca de Usuários através da API do GitHub
 
-A aplicação possui a tela de Login e de Busca, criada com React e que consome a API do GitHub, trazendo as informações sobre o Usuário, Seguidores, Repositórios, entre outros.
+A aplicação possui as interfaces de Login, Busca e de Repositórios, sendo as três responsivas.
+Foi criada com React e consome a API do GitHub, trazendo as informações sobre o Usuário, Seguidores, Repositórios, entre outros.
 
 ### :books: Linguagens e libs utilizadas:
 
 - React.JS,
 - React Icons,
 - React Router,
+- React Hooks,
 - Axios,
 - Styled Components,
 - Visual Studio Code;
@@ -55,3 +57,7 @@ Para visualizar informações de:
 
 - Usuário: https://api.github.com/users/(nome_do_usuario)
 - Lista de Repositórios: https://api.github.com/users/(nome_do_usuario)/repos
+
+Observação: os dados de acesso são:
+Login: "admin"
+Senha: "password"
