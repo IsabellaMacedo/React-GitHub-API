@@ -43,6 +43,10 @@ A aplicação estará rodando em http://localhost:3000.
 
 Outra forma é acessando o link: https://isabellamacedo.github.io/desafio/
 
+Dados de acesso:
+Usuário: admin
+Senha: password
+
 #### Observações sobre a API do GitHub:
 
 Esta aplicação utiliza a API do GitHub. Ela possui um limite de 60 requisições por hora. Para controlar se você poderá fazer mais requisições e quantas faltam, foi adicionada esta informação em tela.
