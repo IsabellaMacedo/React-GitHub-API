@@ -44,7 +44,9 @@ A aplicação estará rodando em http://localhost:3000.
 Outra forma é acessando o link: https://isabellamacedo.github.io/desafio/
 
 Dados de acesso:
+
 Usuário: admin
+
 Senha: password
 
 #### Observações sobre a API do GitHub:
